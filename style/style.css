@@ -329,6 +329,7 @@ p {
 .header {
   color: black;
   padding: 20px 0;
+  display: flex;
 }
 
 .burger-btn {
