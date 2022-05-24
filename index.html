@@ -22,41 +22,44 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container header__container">
-      <a href="#" class="header__logo">
-        <img src="image/logo.svg" alt="Логотип e-trans">
-      </a>
-      <nav class="navigation">
-        <ul class="nav__list">
-          <li class="nav_items"><a class="nav__link" href="#giroscut">Гироскутеры</a></li>
-          <li class="nav_items"><a class="nav__link" href="#monowheels">Моноколеса</a></li>
-          <li class="nav_items"><a class="nav__link" href="#e-scuter">Электросамокаты</a></li>
-        </ul>
-      </nav>
-      <a class="header__link-phone" href="tel:+73848833812">
-        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z"
-            fill="currentColor" />
-        </svg>
+  <div class="hero-bg">
+    <header class="header">
+      <div class="container header__container">
+        <a href="#" class="header__logo">
+          <img src="image/logo.svg" alt="Логотип e-trans">
+        </a>
+        <nav class="navigation">
+          <ul class="nav__list">
+            <li class="nav_items"><a class="nav__link" href="#giroscut">Гироскутеры</a></li>
+            <li class="nav_items"><a class="nav__link" href="#monowheels">Моноколеса</a></li>
+            <li class="nav_items"><a class="nav__link" href="#e-scuter">Электросамокаты</a></li>
+          </ul>
+        </nav>
+        <a class="header__link-phone" href="tel:+73848833812">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z"
+              fill="currentColor" />
+          </svg>
 
-        <span class="header__phone">+7(384)883-38-12</span>
-      </a>
+          <span class="header__phone">+7(384)883-38-12</span>
+        </a>
 
-      <!-- бургер-кнопка -->
-      <button type="button" class="burger-btn__open"></button>
-    </div>
-  </header>
-  <main>
-    <section id="giroscut" class="hero">
+        <!-- бургер-кнопка -->
+        <button type="button" class="burger-btn__open"></button>
+      </div>
+    </header>
+
+    <section  class="hero">
       <div class="container hero__container">
         <h1 class="hero__title"><span class="hero__title_letter">E</span>-trans</h1>
         <p class="hero__subtitle">Начни двигаться по новому</p>
         <button class="hero__btn _modal-open" data-modal-open="modal-1">Узнать больше</button>
       </div>
     </section>
-    <section class="product">
+  </div>
+  <main>
+    <section class="product" id="giroscut">
       <div class="container product__container">
         <img class="product__img" src="image/giroscut.png" alt="гироскутер">
         <div class="product__content">
@@ -65,26 +68,33 @@
             двух соединённых поперечных площадок для ступней, подвижных относительно друг друга, с колёсами по бокам.
             Использует электродвигатели, питаемые от электроаккумулятора, и ряд гироскопических датчиков для
             самобалансировки и поддержания горизонтального положения площадки для ног.</p>
-            <button class="product__btn _modal-open" data-modal-open="modal-1">Выбрать</button>
+          <button class="product__btn _modal-open" data-modal-open="modal-1">Выбрать</button>
         </div>
       </div>
     </section>
-    <section class="product">
+    <section class="product" id="monowheels">
       <div class="container product__container">
         <div class="product__content">
           <h2 class="product__title">Моноколесо</h2>
-          <p class="product__subtitle">Электрический самобалансирующийся уницикл (моноцикл) с одним колесом и расположенными по обе стороны от колеса подножками. Моноколесо является глубокой модернизацией Segway — электрическое самобалансирующееся транспортное средство компании Segway с двумя колёсами, расположенными по обе стороны от водителя, внешне напоминающее колесницу. Изобретено Шейном Ченом.</p>
+          <p class="product__subtitle">Электрический самобалансирующийся уницикл (моноцикл) с одним колесом и
+            расположенными по обе стороны от колеса подножками. Моноколесо является глубокой модернизацией Segway —
+            электрическое самобалансирующееся транспортное средство компании Segway с двумя колёсами, расположенными по
+            обе стороны от водителя, внешне напоминающее колесницу. Изобретено Шейном Ченом.</p>
           <button class="product__btn _modal-open" data-modal-open="modal-1">Выбрать</button>
         </div>
         <img class="product__img" src="image/monowheel.png" alt="Моноколесо">
       </div>
     </section>
-    <section class="product">
+    <section class="product" id="e-scuter">
       <div class="container product__container">
         <img class="product__img" src="image/e_car.png" alt="Электросамокат">
         <div class="product__content">
           <h2 class="product__title">Электросамокат</h2>
-          <p class="product__subtitle">Работает электросамокат следующим образом. Аккумуляторная батарея приводит в действие электродвигатель, конкретные параметры его работы зависят от установленного режима. Режимом работы управляет контроллер, который ориентируется на команды водителя, отдаваемые с рукоятки акселератора и информацию с датчиков. Электродвигатель формирует вращательный момент, передающийся на колесо. Колеса вращаются, самокат движется, вы едете.</p>
+          <p class="product__subtitle">Работает электросамокат следующим образом. Аккумуляторная батарея приводит в
+            действие электродвигатель, конкретные параметры его работы зависят от установленного режима. Режимом работы
+            управляет контроллер, который ориентируется на команды водителя, отдаваемые с рукоятки акселератора и
+            информацию с датчиков. Электродвигатель формирует вращательный момент, передающийся на колесо. Колеса
+            вращаются, самокат движется, вы едете.</p>
           <button class="product__btn _modal-open" data-modal-open="modal-1">Выбрать</button>
         </div>
       </div>
@@ -143,17 +153,17 @@
                 </a>
               </li>
             </ul>
-            <div class="contacts__map-wrapper">
-              <div class="contacts__map" id="map"></div>
-            </div>
           </div>
+        </div>
+        <div class="contacts__map-wrapper">
+          <div class="contacts__map" id="map"></div>
         </div>
       </div>
     </section>
   </main>
   <footer class="footer">
     <a href="#" class="footer__logo">
-      <img src="image/logo.svg" alt="Логотип e-trans">
+      <img class="footer__image" src="image/logo.svg" alt="Логотип e-trans">
     </a>
     <div class="footer__colums">
       <div class="footer__colum">
@@ -202,16 +212,23 @@
           <!-- <img src="images/close.svg" alt="" /> -->
         </button>
         <div class="modal-content modal-callback">
-          <div class="modal-callback__title">Перезвоните нам!</div>
+          <div class="modal-callback__title">Заказать
+            Электросамокат</div>
           <div class="modal-callback__text">
-            Lorem ipsi nulla itaque provident, minima pariatur repellat
-            harum ad eligendi corrupti suscipit facere fugit nisi. Aut
-            adipisci quidem dignissimos nihil quasi, nemo corrupti recusandae.
-            Rerum molestias voluptates nemo, iusto pariatur, voluptatum
-            similique repellendus architecto inventore amet doloremque non ad
-            magnam aut
+            Гироскутер — уличное электрическое транспортное средство, выполненное в форме двух соединённых поперечных
+            площадок для ступней, подвижных относительно друг друга, с колёсами по бокам. Использует электродвигатели,
+            питаемые от электроаккумулятора, и ряд гироскопических датчиков для самобалансировки и поддержания
+            горизонтального положения площадки для ног.
           </div>
         </div>
+        <form action="#">
+          <label for="input">Имя
+          </label>
+          <input type="text" id="input">
+          <label for="phone">Телефон</label>
+          <input type="number" name="number" id="phone">
+          <button type="submit">Выбрать</button>
+        </form>
       </div>
     </div>
   </div>
