@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: rgb(248, 242, 255);
+        font-size: 18px;
+      }
+      p:nth-child(even) {
+        background-color: rgb(246, 231, 255);
+        padding: 20px 0;
+      }
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+        max-width: 1000px;
+        background-color: rgb(252, 249, 255);
+      }
+      /* ============= */
+.menu {
+  position: relative;
+  width: 100%;
+}
+.burger {
+  margin-left: auto;
+  display: block;
+  height: 18px;
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+  z-index: 5;  
+} 
+.burger span {
+  transition: all 0.3s ease 0s;
+  top: calc(50% - 1px);
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+.burger span:first-child {
+  top: 0;
+}
+.burger span:last-child {
+  top: auto;
+  bottom: 0;
+}
+.burger._active span:first-child {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+.burger._active span {
+  transform: scale(0);
+}
+.burger._active span:last-child {
+  transform: rotate(45deg);
+  bottom: calc(50% - 1px);
+}
+/* ==================== */
+/* меню */
+.menu__overlay {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+.menu__body {
+  background-color: #fff;
+  width: 40%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+._active .menu__overlay {
+  opacity: 1;
+  visibility: visible;
+}
+._active .menu__body {
+  left: 0;
+}
+    </style>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  <div class="menu">    
+<div class="menu__overlay">
+  <div class="menu__body">
+    
+    <ul>
+      <li>Ссылка 1</li>
+      <li>Ссылка 2</li>
+      <li>Ссылка 3</li>
+      <li>Ссылка 4</li>
+      <li>Ссылка 5</li>
+    </ul>
+    <button class="x" >x</button>
+  </div>
+</div>
+</div>
+<script>
+  let burger = document.querySelector('.burger');
+	let menu = document.querySelector('.menu');
+  let x = document.querySelector('.x');
+
+//кнопка
+
+	if (burger && menu) {
+		burger.onclick = () => {
+			burger.classList.toggle('_active')
+			menu.classList.toggle('_active')
+      console.log('kfk')
+		}
+  }
+  x.addEventListener('click', e => {
+    menu.classList.remove('_active')
+    burger.classList.remove('_active')
+  });
+
+menu.addEventListener('click', e => {
+  if (e.target.classList.contains('menu__overlay')) {
+    burger.classList.remove('_active')
+			menu.classList.remove('_active')
+  }
+})
+</script>
+  </body>
+</html>

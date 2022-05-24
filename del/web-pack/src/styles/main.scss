@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap");
+
+$green: #27300f;
+$orange: #d26a22;
+$white: rgb(255, 255, 255);
+$font-cormorant: "Cormorant",
+serif;
+$font-jost: "Jost",
+sans-serif;
+
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_567: 567px;
+$r_tab: 768px;
+$r_tab_900: 900px;
+$r_desk: 999px;
+$r_desk_hd: 1200px;
+$r_desk_1120: 1120px;
+$r_desk_1170: 1170px;
+$r_desk_1280: 1280px;
+$r_desk_1350: 1350px;
+$r_desk_1400: 1400px;
+$r_desk_full_1750: 1750px;
+
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-size-mini: 3rem;
+}
+
+h1 {
+  font-size: var(--text-size-mini);
+}
+
+body {
+  font-size: 62.5%;
+  /* 16px*0.62.5% = 10px */
+  color: #000000;
+  font-weight: normal;
+  font-family: Montserrat;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.burger-btn__open {
+  background-image: url(../images/burger_menu.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  border: none;
+  background-color: transparent;
+  height: 16px;
+  width: 24px;
+  margin-left: 5%;  
+}
+
+/* кнопка закрыть меню  images/burger_close.svg */
+.burger-btn__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: block;
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-image: url(../images/burger_close.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
+/* бургер меню */
+.modal__mb {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.modal__mb_window {
+  position: relative;
+  background-color: #9e9d52;
+  padding: 40px 20px;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+}
+
+.burger-link {
+  margin-top: 30px;
+}
+
+.modal_link {
+  display: block;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 136.8%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.modal_logo {
+  display: block;
+  background-image: url(../images/logo_mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 46px;
+  height: 40.89px;
+}
+
+.modal_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+._locked {
+  overflow: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* moby-modal-off */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1010px;
+  margin: 0 auto;
+}
+.nav__box {
+  display: flex;
+}
+/* модальное окно начало */
+._locked {
+  overflow: hidden;
+}
+
+.modal__btn {
+  border: none;
+  background-color: #f36262;
+  padding: 5px 10px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+._modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+}
+
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.modal-body {
+  padding: 24px;
+  background-color: #fff;
+  width: 700px;
+  margin: auto;
+  max-height: 90%;
+  overflow: auto;
+  border-radius: 16px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* модальное окно конец  */
+/* бургер меню  */
+
+
+.modal_window {
+  background-color: #252525;
+  padding: 113px 20px;
+  height: 100%;
+  width: 100%;
+  max-width: 229px;
+}
+
+.header-modal-close {
+  // background-image: url(../images/close.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  height: 16.97px;
+  width: 16.97px;
+}
+
+.burger-link::after {
+  display: block;
+  position: relative;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #A8A8A8;
+  transition: width .2s ease-in-out, left .5s ease-in-out;
+  left: 0%;
+  bottom: -10px;
+}
+
+.burger-link a {
+  color: #ffffff;
+  display: block;
+  margin-top: 20px;
+}
+
+._active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  left: 0;
+}
+
+.burger_active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  left: 0;
+}
+
+.header {
+  color: #ffffff;
+}
+
+.header_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 1rem;
+}
+
+// .header__bg {
+//   background-image: url(../images/header_bg.png);
+//   display: block;
+//   background-size: contain;
+//   height: 568px;
+//   background-repeat: no-repeat;
+// }
+
+.modal__btn {
+  background-color: transparent;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.burger-btn {
+  // background-image: url(../images/burger-menu.svg);  
+  background-image: url(../images/burger_menu.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  background-color: transparent;
+  height: 16px;
+  width: 24px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #858585;
+}
+
+// модалка
+._locked {
+  overflow: hidden;
+}
+
+.modal__btn {
+  border: none;
+  background-color: #f36262;
+  padding: 5px 10px;
+  color: #fff;
+  display:
+    -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+._modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+}
+
+._modal._active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.modal-body {
+  padding: 24px;
+  background-color: #fff;
+  width: 700px;
+  margin:
+    auto;
+  max-height: 90%;
+  overflow: auto;
+  border-radius: 16px;
+  position:
+    relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* ку ку  */
+@media (max-width: 360px) {
+  :root {
+    --text-size-mini: 1rem;
+  }
+}

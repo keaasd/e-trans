@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: rgb(248, 242, 255);
+        font-size: 18px;
+      }
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+        max-width: 1000px;
+        background-color: rgb(252, 249, 255);
+      }
+    .map {
+    max-height: 649px;
+    width: 100%;
+    height: max(649px, 310px);
+    }
+      .map__balloon {
+        display: flex;
+      }
+      .ymaps-2-1-79-i-custom-scroll {
+        height: fit-content;
+      }
+      .map__burger-img {
+        max-height: 300px;  
+        margin-right: 10px;
+      }
+      .map__title-hero, .map__title-span {
+        display: block;
+        font-family: "Philosopher", sans-serif;
+        font-size: min(25px, 1rem);
+        line-height: 1.3;
+      font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+      .map {
+        max-height: 310px;
+      }
+      }
+    </style>
+    <pre>https://yandex.ru/dev/maps/jsbox/2.1/placemark
+      найти адрес в яндекс и скопировать координаты</pre>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<a4507f8e-eba9-4917-a716-9c17d3b3e400>"
+      type="text/javascript"></script>
+      <pre> скрипт ниже можно подключить отдельно</pre>
+    <!-- <script src="./js/yandex-map.js"></script> -->
+    <script>
+      ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+            center: [55.815803, 37.370906],            
+            zoom: 17,
+            controls: ['zoomControl'],
+            behaviors: ['drag']
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Красногорск, Павшинская пойма, Красногорский бульвар, 13',
+            balloonContent: 
+            [
+                `<div class="map__balloon">
+                <img class="map__burger-img" src="../img/logo_mobile.svg" alt="logo"/>
+                <p class="map__title-hero">Добро пожаловать в Thai Smile Spa!<span class="map__title-span">Заходите по адресу:</span>Красногорский бульвар, 13
+                </p></div>`
+            ],
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: '../img/map-pin.svg',
+            // Размеры метки.
+            iconImageSize: [30, 42],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-5, -38]
+        }),
+
+        myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+            hintContent: 'Красногорский бул., 13 Московская обл.,',
+            // balloonContent: 
+
+            iconContent: '12'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: '../img/map-pin.svg',
+            // Размеры метки.
+            iconImageSize: [48, 48],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-24, -24],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 15],
+            // Макет содержимого.
+            iconContentLayout: MyIconContentLayout
+        });
+
+    myMap.geoObjects
+        .add(myPlacemark)
+        .add(myPlacemarkWithContent);
+});
+
+
+
+
+// =======================
+// var placemarks = [
+//     {
+//         latitude: 55.81,
+//         longitude: 37.37,
+        // hintContent: '<div class="map__hint">ул. Литераторов, д. 19</div>',
+        // balloonContent: [
+        //     '<div class="map__balloon">',
+        //     '<img class="map__burger-img" src="img/burger.png" alt="Бургер"/>',
+        //     'Самые вкусные бургеры у нас! Заходите по адресу: ул. Литераторов, д. 19',
+        //     '</div>'
+        // ]
+    // },
+    // {
+    //     latitude: 59.94,
+    //     longitude: 30.25,
+    //     hintContent: '<div class="map__hint">Малый проспект В О, д 64</div>',
+    //     balloonContent: [
+    //         '<div class="map__balloon">',
+    //         '<img class="map__burger-img" src="img/burger.png" alt="Бургер"/>',
+    //         'Самые вкусные бургеры у нас! Заходите по адресу: Малый проспект В О, д 64',
+    //         '</div>'
+    //     ]
+    // },
+    // {
+    //     latitude: 59.93,
+    //     longitude: 30.34,
+    //     hintContent: '<div class="map__hint">наб. реки Фонтанки, д. 56</div>',
+    //     balloonContent: [
+    //         '<div class="map__balloon">',
+    //         '<img class="map__burger-img" src="img/burger.png" alt="Бургер"/>',
+    //         'Самые вкусные бургеры у нас! Заходите по адресу: наб. реки Фонтанки, д. 56',
+    //         '</div>'
+    //     ]
+    // }
+// ],
+//     geoObjects= [];
+
+// function init() {
+//     var map = new ymaps.Map('map', {
+//         center: [55.81, 37.37],
+//         zoom: 16,
+//         controls: ['zoomControl'],
+//         behaviors: ['drag']
+//     });
+
+    // for (var i = 0; i < placemarks.length; i++) {
+    //         geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude],
+    //         {
+    //             hintContent: placemarks[i].hintContent,
+    //             balloonContent: placemarks[i].balloonContent.join('')
+    //         },
+    //         {
+    //             iconLayout: 'default#image',
+    //             iconImageHref: 'img/sprite.png',
+    //             iconImageSize: [46, 57],
+    //             iconImageOffset: [-23, -57],
+    //             iconImageClipRect: [[415, 0], [461, 57]]
+    //         });
+    // }
+
+    // var clusterer = new ymaps.Clusterer({
+    //     clusterIcons: [
+    //         {
+    //             href: 'img/burger.png',
+    //             size: [100, 100],
+    //             offset: [-50, -50]
+    //         }
+    //     ],
+    //     clusterIconContentLayout: null
+    // });
+
+    // map.geoObjects.add(clusterer);
+    // clusterer.add(geoObjects);
+// }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script defer src="js/index.js"></script>
+  <script defer src="js/modal.js"></script>
+  <script defer src="js/btn-up.js"></script>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/burger_menu.js"></script>
+  <title>e-trans</title> 
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+
+    </div>
+    <a href="#" class="header__logo">
+      <img src="image/logo.svg" alt="Логотип e-trans">
+    </a>
+    <nav class="navigation">
+      <ul class="nav__list">
+        <li class="nav_items"><a class="nav__link" href="#giroscut">Гироскутеры</a></li>
+        <li class="nav_items"><a class="nav__link" href="#monowheels">Моноколеса</a></li>
+        <li class="nav_items"><a class="nav__link" href="#e-scuter">Электросамокаты</a></li>
+      </ul>
+    </nav>
+    <a class="header__link-phone" href="tel:+73848833812">
+      <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" fill="currentColor"/>
+        </svg>
+                
+      <span class="header__phone">+7(384)883-38-12</span>
+    </a>
+    
+    <!-- бургер-кнопка -->
+    <button type="button" class="burger-btn__open"></button>
+  </header> 
+  <main>
+    <section class="hero">
+      <h1 class="hero__title"><span class="hero__title_letter">E</span>-trans</h1>
+      <p class="hero__subtitle">Начни двигаться по новому</p>
+      <button class="hero__btn _modal-open" data-modal-open="modal-1">Узнать больше</button>
+    </section>
+  <button class="modal__btn _modal-open" data-modal-open="modal-1">
+    <span>кнопка модалки</span>        
+  </button>
+</main>
+<footer></footer>
+
+  <!-- мобильное меню  -->
+  <div class="modal__mb">
+    <div class="modal__mb_window">
+      <div class="modal_box">
+        <div class="modal_logo"></div>
+        <button type="button" class="burger-btn__close">х</button>
+      </div>
+      <div class="burger-link">
+        <a class="modal_link" href="#">Услуги</a>
+        <a class="modal_link" href="#">Галерея</a>
+        <a class="modal_link" href="#">Акции</a>
+      </div>
+    </div>
+  </div>
+  <!-- модальное окно -->
+  <div class="_modal" data-modal="modal-1">
+    <div class="modal-bg">
+      <div class="modal-body">
+        <button class="modal-close">
+          <!-- <img src="images/close.svg" alt="" /> -->
+        </button>
+        <div class="modal-content modal-callback">
+          <div class="modal-callback__title">Перезвоните нам!</div>
+          <div class="modal-callback__text">
+            Lorem ipsi nulla itaque provident, minima pariatur repellat
+            harum ad eligendi corrupti suscipit facere fugit nisi. Aut
+            adipisci quidem dignissimos nihil quasi, nemo corrupti recusandae.
+            Rerum molestias voluptates nemo, iusto pariatur, voluptatum
+            similique repellendus architecto inventore amet doloremque non ad
+            magnam aut
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#headerTop" class="to-up">&#8679;</a>
+</body>
+
+</html>
