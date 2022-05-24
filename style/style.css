@@ -450,7 +450,7 @@ p {
   align-items: center;
 }
 .header__link-phone svg {
-  fill: var(--btn-color);
+  color: var(--btn-color);
 }
 
 .product__container {
