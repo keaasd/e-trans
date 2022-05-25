@@ -8,6 +8,7 @@
   font-display: swap;
   font-weight: 400;
 }
+
 @font-face {
   font-family: Inter;
   src: url('../fonts/inter_cyrillic-700.woff2') format('woff2'),
@@ -15,6 +16,7 @@
   font-display: swap;
   font-weight: 700;
 }
+
 *,
 *::after,
 *::before {
@@ -81,9 +83,12 @@ h2,
 h3,
 h4,
 h5,
-h6, p, ul { 
+h6,
+p,
+ul {
   margin: 0;
 }
+
 ul {
   padding: 0;
   list-style: none;
@@ -104,13 +109,16 @@ input[type=search]::-webkit-search-results-decoration {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
 button {
   cursor: pointer;
   background-color: transparent;
   transition: .3s ease-in-out;
 }
+
 button,
-input, textarea {
+input,
+textarea {
   outline: none;
   border: none;
   padding: 7px 10px;
@@ -231,7 +239,7 @@ p {
 .container {
   padding-left: 72px;
   padding-right: 72px;
-  max-width: 1324px; 
+  max-width: 1324px;
   margin: 0 auto;
 }
 
@@ -242,6 +250,7 @@ p {
   gap: 15px;
   /* width: 100%; */
 }
+
 .header__container {
   display: grid;
   grid-template-columns: 3fr 6fr 3fr;
@@ -388,7 +397,9 @@ p {
 .header {
   padding: 20px 0;
   position: absolute;
-  top: 0;right: 0;left: 0;
+  top: 0;
+  right: 0;
+  left: 0;
   /* display: flex; */
 }
 
@@ -411,9 +422,12 @@ p {
   padding-top: 60px;
   padding-bottom: 30px;
 }
+
 .footer__logo {
   margin-bottom: 40px;
+  display: block;
 }
+
 .footer__image {
   width: 160px;
   height: 34px;
@@ -431,9 +445,14 @@ p {
 }
 
 .footer__link {
-  /* color: white; */
+  font-size: 18px;
+  line-height: 1.2;
 }
-
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .footer__title {
   /* color: white; */
 }
@@ -472,7 +491,7 @@ p {
 
 .header__link-phone {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-self: end;
   color: var(--btn-color);
 }
@@ -485,7 +504,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:20px;
+  gap: 20px;
 }
 
 .product__img {
@@ -512,12 +531,15 @@ p {
   color: white;
   transition-duration: .2s;
 }
+
 .product__btn:focus {
   border-color: var(--btn-color-black);
 }
+
 .product__btn:hover {
   background-color: var(--btn-color-light);
 }
+
 .nav__link {
   /* font-size: calc( (100vw - 768px)/(1440 - 768) * (18 - 14) + 14px); */
   font-size: calc((100vw - 320px)/(1024 - 320) * (18 - 12) + 12px);
@@ -526,9 +548,12 @@ p {
   line-height: 1.2;
   color: #FFFFFF;
 }
-.nav__link:hover {
+
+.nav__link:hover,
+.footer__link:hover {
   color: var(--btn-color-light);
 }
+
 .header__phone {
   font-weight: 700;
   font-size: 18px;
@@ -536,9 +561,12 @@ p {
   color: #FFFFFF;
   margin-left: 4px;
 }
-.header__link-phone:hover, .header__link-phone:hover .header__phone {
+
+.header__link-phone:hover,
+.header__link-phone:hover .header__phone {
   color: var(--btn-color-light);
 }
+
 .nav_items:not(:last-child) {
   margin-right: 2.8vw;
 }
@@ -601,15 +629,19 @@ p {
 .hero__btn:hover {
   background-color: var(--btn-color);
 }
+
 .hero__btn:active {
   background-color: var(--btn-color-light);
 }
+
 .hero__btn:focus {
   border-color: var(--btn-color);
 }
+
 .product {
   padding-top: 150px;
 }
+
 .product:nth-child(even) .product__container {
   flex-direction: row-reverse;
 
@@ -635,9 +667,11 @@ p {
   text-overflow: ellipsis;
   margin-bottom: 60px;
 }
+
 .contacts_section {
   padding-top: 60px;
 }
+
 .contacts__title {
   font-weight: 700;
   font-size: 60px;
@@ -651,15 +685,18 @@ p {
   background-color: gray;
   flex-grow: 1;
 }
+
 .contacts__map {
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 }
+
 .contacts__wrap {
   display: flex;
   margin-top: 50px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .contacts__container {
   display: flex;
   align-items: center;
@@ -667,6 +704,7 @@ height: 100%;
   padding-right: 0;
   max-width: none;
 }
+
 .contacts__column {
   width: 380px;
   display: flex;
@@ -674,33 +712,42 @@ height: 100%;
   gap: 36px;
   padding-right: 20px;
 }
+
 .contacts__list {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
+
 .contacts__link {
   display: flex;
   align-items: center;
   gap: 3px;
 }
+
 .contacts__link svg {
   color: var(--btn-color);
   transition: .3s ease-in-out;
 }
-.contacts__link:hover, .contacts__link:hover svg {
-color: var(--btn-color-light);
+
+.contacts__link:hover,
+.contacts__link:hover svg {
+  color: var(--btn-color-light);
 }
+
 .social {
   display: flex;
   gap: 30px;
 }
+
 .social__link {
-color: var(--btn-color);
+  color: var(--btn-color);
 }
+
 .social__link:hover {
-  color:var(--btn-color-light)
+  color: var(--btn-color-light)
 }
+
 .contacts__office {
   font-weight: 700;
   font-size: 22px;
