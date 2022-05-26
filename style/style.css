@@ -51,6 +51,8 @@ ul {
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  overflow-x: hidden;
 }
 
 body {
@@ -426,6 +428,7 @@ p {
 .footer__logo {
   margin-bottom: 40px;
   display: block;
+  width: 160px;
 }
 
 .footer__image {
