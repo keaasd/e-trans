@@ -74,6 +74,7 @@ const createModal = (title, description) => {
     });
     const hideInputElem = createElem('input', {
         name: 'phone',
+        type: 'hidden',
     })
     const btnSubmit = createElem('button', {
         className: 'modal__btn',
@@ -104,7 +105,7 @@ modalElem.append(modalContainerElem);
 overlayElem.append(modalElem);
 return overlayElem;
 };
-// 36:13
+// 01:03 value поправить
 
 const productTitle = document.querySelectorAll('.product__title');
 const productSubtitle = document.querySelectorAll('.product__subtitle');

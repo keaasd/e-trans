@@ -341,9 +341,12 @@ input:invalid {
   display: block;
 font-weight: 700;
 margin-bottom: 10px;
-width: 100%;
-height: 78px;
-padding: 15px;
+
+}
+.modal__input {
+  width: 100%;
+  height: 78px;
+  padding: 15px;
 }
 .modal__input::placeholder {
   color: #c0c0c0;
@@ -377,7 +380,11 @@ padding: 15px;
   background-color: var(--btn-color-light);
 }
 
-.modal__close {}
+.modal__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 .modal-body {
   padding: 24px;
   background-color: #fff;
