@@ -50,7 +50,7 @@ ul {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   position: relative;
   overflow-x: hidden;
 }
@@ -282,9 +282,9 @@ input:invalid {
   display: flex;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  /* visibility: hidden;
-  opacity: 0; */
+  z-index: 999;  
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-transition: all .2s;
   transition: all .2s;
   cursor: pointer;
@@ -299,8 +299,6 @@ input:invalid {
   cursor: default;
   border: 1px solid #646464;
   border-radius: 8px;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .modal-bg {
@@ -382,8 +380,8 @@ margin-bottom: 10px;
 
 .modal__close {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 15px;
+  top: 15px;
 }
 .modal-body {
   padding: 24px;

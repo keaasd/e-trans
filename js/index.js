@@ -23,6 +23,23 @@ const init = () => {
 };
 ymaps.ready(init);
 
+const disabledScroll = () => {
+    document.body.scrollPosition = window.scrollY;
+    document.body.style.cssText = `
+    overflow: hidden;
+    position: fixed;
+    top: -${document.body.scrollPosition}px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-right: ${window.innerWidth - document.body.offsetWidth}px;
+    `;
+}
+const enabledScroll = () => {
+    document.body.style.cssText = '';
+    window.scroll({top: document.body.scrollPosition})
+}
+
 const createElem = (tag, attr) => {
     const elem = document.createElement(tag);
     return Object.assign(elem, { ...attr });
@@ -73,9 +90,10 @@ const createModal = (title, description) => {
         required: true,
     });
     const hideInputElem = createElem('input', {
-        name: 'phone',
+        name: 'product',
         type: 'hidden',
-    })
+        value: title,
+    });
     const btnSubmit = createElem('button', {
         className: 'modal__btn',
         textContent: 'Заказать',
@@ -84,15 +102,19 @@ const createModal = (title, description) => {
     const closeModal = createElem('button',
         {
             className: 'modal__close',
-            innerHTML: `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            innerHTML: `
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="25.288" height="2.06669" transform="matrix(0.69782 0.716273 -0.69782 0.716273 2.35352 0.388474)" fill="#010101"/>
     <rect width="25.8556" height="2.06669" transform="matrix(0.69782 -0.716273 0.69782 0.716273 0 18.5197)" fill="#010101"/>
-    </svg>`
+    </svg>
+    `,
+    ariaLabel: 'Закрытие модальное окна'
         });
 overlayElem.addEventListener('click', event => {
     const target = event.target;
     if (target === overlayElem || target.closest('.modal__close')) {
         overlayElem.remove();
+        enabledScroll();
     }
 })
 btnSubmit.setAttribute('form', 'order')
@@ -103,6 +125,9 @@ formElem.append(nameLabelElem, phoneLabelElem, hideInputElem)
 modalContainerElem.append(titleElem, descriptionElem, formElem, btnSubmit, closeModal);
 modalElem.append(modalContainerElem);
 overlayElem.append(modalElem);
+disabledScroll();
+
+document.body.append(overlayElem);
 return overlayElem;
 };
 // 01:03 value поправить
@@ -115,10 +140,7 @@ for (let i = 0; i < productBtn.length; i++) {
     productBtn[i].addEventListener('click', () => {
         const title = productTitle[i].textContent;
         const description = productSubtitle[i].textContent;
-
-        const modal = createModal(title, description);
-        console.log(modal);
-        document.body.append(modal);
+        createModal(title, description);
     })
 
 }
