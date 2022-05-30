@@ -115,6 +115,9 @@ overlayElem.addEventListener('click', event => {
     if (target === overlayElem || target.closest('.modal__close')) {
         overlayElem.remove();
         enabledScroll();
+        htm.style.cssText = `
+        scroll-behavior:smooth;
+    `;
     }
 })
 btnSubmit.setAttribute('form', 'order')
@@ -135,12 +138,16 @@ return overlayElem;
 const productTitle = document.querySelectorAll('.product__title');
 const productSubtitle = document.querySelectorAll('.product__subtitle');
 const productBtn = document.querySelectorAll('.product__btn');
+const htm = document.querySelector('html');
 // console.log('elem: ', elem);
 for (let i = 0; i < productBtn.length; i++) {
     productBtn[i].addEventListener('click', () => {
         const title = productTitle[i].textContent;
         const description = productSubtitle[i].textContent;
         createModal(title, description);
+        htm.style.cssText = `
+        scroll-behavior:inherit;
+    `;
     })
 
 }
